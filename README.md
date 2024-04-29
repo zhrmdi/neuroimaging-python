@@ -1,2 +1,2 @@
-# neuroimaging-with-nipy-course
-An introductory course on neuroimaging analysis in Python with nipy.
+# Neuroimaging with Python
+An introductory course on the analysis of the neuroimaging data in Python.
