@@ -1,11 +1,10 @@
 #!/bin/bash
 
 #User inputs:
-bids_root_dir=$HOME/Users/zahra/ds000102
+bids_root_dir=$HOME/ds000102
 subj=08
-nthreads=4
+nthreads=2
 mem=8 #gb
-container=docker #docker or singularity
 
 #Begin:
 
