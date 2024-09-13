@@ -131,3 +131,7 @@ dmypy.json
 #data and metadata
 *.gz
 *.json
+
+# macOS
+.DS_Store
+
