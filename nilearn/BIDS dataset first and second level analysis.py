@@ -1,11 +1,14 @@
-import os
-from sklearn.utils import Bunch
-from bids import BIDSLayout
-from nilearn.datasets import fetch_language_localizer_demo_dataset
+# An example of fitting a GLM to perform first and second level analysis
+# source: https://nilearn.github.io/stable/auto_examples/07_advanced/plot_bids_analysis.html#
+
 
 
 # 1. Fetch example BIDS dataset
 
+import os
+from sklearn.utils import Bunch
+from bids import BIDSLayout
+from nilearn.datasets import fetch_language_localizer_demo_dataset
 # Define a path to store the dataset
 data_dir = os.path.join(os.path.expanduser('~'), 'nilearn_data', 'fMRI-language-localizer-demo-dataset')
 
@@ -29,6 +32,20 @@ else:
 
 print(data.data_dir)
 
+
+
 # 2. Obtain automatically FirstLevelModel objects and fit arguments
+
+from nilearn.glm.first_level import first_level_from_bids
+
+task_label = "languagelocalizer"
+(
+    models,
+    models_run_imgs,
+    models_events,
+    models_confounds,
+) = first_level_from_bids(
+    data.data_dir, task_label, img_filters=[("desc", "preproc")], n_jobs=2
+)
 
 
