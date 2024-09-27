@@ -48,4 +48,7 @@ task_label = "languagelocalizer"
     data.data_dir, task_label, img_filters=[("desc", "preproc")], n_jobs=2
 )
 
+# Quick sanity check on fit arguments
+from pathlib import Path
 
+print([Path(run).name for run in models_run_imgs[0]])
